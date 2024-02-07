@@ -30,3 +30,4 @@ Para visualizar a documentação interativa da API e testar os endpoints diretam
 Certifique-se de que o serviço esteja rodando localmente antes de tentar acessar o link.
 
 
+![image](https://github.com/rebekahveiga/API_C-/assets/61145169/5719099f-a66a-4102-89d3-935fc9fd94e1)

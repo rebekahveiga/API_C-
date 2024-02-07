@@ -5,23 +5,19 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString
-    ("FilmeConnection");
 
+// Configuração da conexão com o banco de dados
+var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
 builder.Services.AddDbContext<FilmeContext>(opts =>
-    opts.UseMySql(builder.Configuration.GetConnectionString("FilmeConnection"),
-        new MySqlServerVersion(new Version(8, 0, 31)),
-        mySqlOptions => mySqlOptions.EnableRetryOnFailure()));
+    opts.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 
-
-// Add services to the container.
-
-//AUTOMAPPER
+// AUTOMAPPER
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-
+// Configuração dos Controllers
 builder.Services.AddControllers().AddNewtonsoftJson();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configuração do Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -29,23 +25,17 @@ builder.Services.AddSwaggerGen(c =>
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
-}
-
-);
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Habilita o Swagger em todos os ambientes
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FilmesApi v1"));
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

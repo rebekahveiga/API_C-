@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FilmesApi</name>
+    </assembly>
+    <members>
+        <member name="M:FilmesApi.Controllers.FilmeController.AdicionaFilme(FilmesApi.Dataset.Dtos.CreateFilmeDto)">
+            <summary>
+            Adiciona um Filme ao banco de dados
+            </summary>
+            <param name="filmeDto"></param> Objetos com os campos necessarios para criacao de um filme
+            <returns></returns>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.LerFilmes(System.Int32,System.Int32)">
+            <summary>
+            Método Leitura de um Filme na lista
+            </summary>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.AtualizaFilme(System.Int32,FilmesApi.Dataset.Dtos.UpdateFilmeDto)">
+            <summary>
+            Metodo Atualizar Filme
+            </summary>
+            <param name="id"></param>
+            <param name="filmeDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.AtualizaParcialFilme(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmesApi.Dataset.Dtos.UpdateFilmeDto})">
+            <summary>
+            Metodo Atualizar filme parcialmente
+            </summary>
+            <param name="id"></param>
+            <param name="patch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.DeletaFilme(System.Int32)">
+            <summary>
+             Metodo Exclui Filme
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FilmesApi.Migrations.AdicionaFilmes">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.AdicionaFilmes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.AdicionaFilmes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.AdicionaFilmes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

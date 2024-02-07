@@ -23,4 +23,10 @@ Este documento README detalha os principais aspectos e funcionalidades que imple
 
 - **DTOs e Boas Práticas:** Adotei o uso de DTOs (Data Transfer Objects) para otimizar a transferência de dados entre diferentes camadas da aplicação.
 
+## Acesso ao Swagger UI
+
+Para visualizar a documentação interativa da API e testar os endpoints diretamente pelo navegador, inicie o projeto localmente e acesse o Swagger UI através do seguinte link: [Swagger UI](https://localhost:7034/swagger/index.html).
+
+Certifique-se de que o serviço esteja rodando localmente antes de tentar acessar o link.
+
 

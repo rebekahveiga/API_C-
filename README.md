@@ -23,6 +23,3 @@ Este documento README detalha os principais aspectos e funcionalidades que imple
 
 - **DTOs e Boas Práticas:** Adotei o uso de DTOs (Data Transfer Objects) para otimizar a transferência de dados entre diferentes camadas da aplicação.
 
-## Acesso ao Swagger UI
-
-- Foi feito o deploy usando o Azure
